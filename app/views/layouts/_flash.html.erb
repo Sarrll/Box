@@ -1,0 +1,32 @@
+<%if notice %>
+  <div class="alert alert-success fade in alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">×</span>
+    </button>
+    <strong>Success: </strong><%= notice %>
+  </div>
+<% end %>
+<%if alert %>
+  <div class="alert alert-danger fade in alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">×</span>
+    </button>
+    <strong>Error: </strong><%= alert %>
+  </div>
+<% end %>
+<%if devise_error_messages! != "" %>
+  <div class="alert alert-danger fade in alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">×</span>
+    </button>
+    <strong>Error: </strong><%= devise_error_messages! %>
+  </div>
+<% end %>
+<%if @message %>
+  <div class="alert alert-<%= @status %> fade in alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">×</span>
+    </button>
+    <strong><%= @status.capitalize %>: </strong><%= @message %>
+  </div>
+<% end %>

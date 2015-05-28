@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chanintr Box</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <%= stylesheet_link_tag    'vendor', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= stylesheet_link_tag    'pages/styleguide', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id="content" class="animated fadeIn">
+    <header class="header">
+      <%= render 'layouts/header' %>
+    </header>
+    <section class="content">
+      <div id="main-container" class="container-fluid main-container">
+        <div class="row">
+          <div id="styleguide-menu" class="col-xs-12">
+            <nav>
+              <ul class="nav nav-justified">
+                <li class="<%= controller.class == StyleGuideController and controller.action_name == 'typography' ? 'active' : '' %>">
+                  <%= link_to "Typography", styleguide_typography_path %>
+                </li class="<%= controller.class == StyleGuideController and controller.action_name == 'typography' ? 'active' : '' %>">
+                <li class="<%= controller.class == StyleGuideController and controller.action_name == 'panels' ? 'active' : '' %>">
+                  <%= link_to "Panels", styleguide_panels_path %>
+                </li class="<%= controller.class == StyleGuideController and controller.action_name == 'typography' ? 'active' : '' %>">
+                <li class="<%= controller.class == StyleGuideController and controller.action_name == 'tabs' ? 'active' : '' %>">
+                  <%= link_to "Tabs & Accordions", styleguide_tabs_path %>
+                </li>
+                <li class="<%= controller.class == StyleGuideController and controller.action_name == 'messages' ? 'active' : '' %>">
+                  <%= link_to "Messages & Notifications", styleguide_messages_path %>
+                </li>
+                
+                <li class="<%= controller.class == StyleGuideController and controller.action_name == 'tables' ? 'active' : '' %>">
+                  <%= link_to "Tables", styleguide_tables_path %>
+                </li>
+                <li class="<%= controller.class == StyleGuideController and controller.action_name == 'bottons' ? 'active' : '' %>">
+                  <%= link_to "Buttons", styleguide_buttons_path %>
+                </li>
+                
+                <li class="<%= controller.class == StyleGuideController and controller.action_name == 'forms' ? 'active' : '' %>">
+                  <%= link_to "Forms", styleguide_forms_path %>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="row">
+          <div id="main-content" class="col-xs-12">
+            <!--  main content -->
+            <%= render 'layouts/flash' %>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <%= render 'layouts/footer' %>
+    </footer>
+    </div>
+  </body>
+</html>

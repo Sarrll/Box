@@ -1,0 +1,58 @@
+<div class="text-center inner-content">
+  <div class="">
+    <hgroup class="page-header text-center">
+      <h3>Sign In</h3>
+    </hgroup>
+    <span class="sep sep-block"></span>
+    <%= form_for(
+      resource, 
+        as: resource_name, 
+        url: session_path(resource_name),
+        :html => {
+          :'data-type' => 'json',
+          :'class' => 'form-horizontal new_user'
+        },
+        remote: true
+    ) do |f| %>
+      <div class="form-group">
+        <%= f.label :email, "Email address", :class => "col-sm-3 control-label" %>
+        <div class="col-sm-9">
+          <%= f.email_field :email, autofocus: true , :class => "form-control" , placeholder: "e.g. info@chanintr.com" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :password, :class => "col-sm-3 control-label" %>
+        <div class="col-sm-9">
+          <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+        </div>
+      </div>
+      <% if devise_mapping.rememberable? -%>
+        <div class="form-group text-left">
+          <div class="col-sm-offset-3 col-sm-9">
+            <%= f.label :remember_me, :class => "checkbox" do %>
+              <%= f.check_box :remember_me , checked: true  , :data => { :toggle => "checkbox" } %>
+              Remember me
+            <% end -%>
+          </div>
+        </div>
+      <% end -%>
+      <div class="actions form-group text-left">
+        <div class="col-sm-offset-3 col-sm-2">
+          <%= button_tag(type: 'submit', :class=> "btn btn-primary btn-block btn-lg") do %>
+            Sign In
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <span class="sep sep-block"></span>
+    <div class="">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    form_submission("#new_user");
+  });
+</script>

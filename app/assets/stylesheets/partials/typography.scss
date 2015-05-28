@@ -1,0 +1,280 @@
+@font-face {
+  font-family: "SukhumvitSet";
+  src: font-url("SukhumvitSet-Bold.eot");
+  src: font-url("SukhumvitSet-Bold.eot?#iefix") format("embedded-opentype"),
+       font-url("SukhumvitSet-Bold.woff2") format("woff2"),
+       font-url("SukhumvitSet-Bold.woff") format("woff"),
+       font-url("SukhumvitSet-Bold.ttf") format("truetype"),
+       font-url("SukhumvitSet-Bold.svg#SukhumvitSet-Bold") format("svg");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SukhumvitSet";
+  src: font-url("SukhumvitSet-Light.eot");
+  src: font-url("SukhumvitSet-Light.eot?#iefix") format("embedded-opentype"),
+       font-url("SukhumvitSet-Light.woff2") format("woff2"),
+       font-url("SukhumvitSet-Light.woff") format("woff"),
+       font-url("SukhumvitSet-Light.ttf") format("truetype"),
+       font-url("SukhumvitSet-Light.svg#SukhumvitSet-Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SukhumvitSet";
+  src: font-url("SukhumvitSet-Medium.eot");
+  src: font-url("SukhumvitSet-Medium.eot?#iefix") format("embedded-opentype"),
+       font-url("SukhumvitSet-Medium.woff2") format("woff2"),
+       font-url("SukhumvitSet-Medium.woff") format("woff"),
+       font-url("SukhumvitSet-Medium.ttf") format("truetype"),
+       font-url("SukhumvitSet-Medium.svg#SukhumvitSet-Medium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SukhumvitSet";
+  src: font-url("SukhumvitSet-SemiBold.eot");
+  src: font-url("SukhumvitSet-SemiBold.eot?#iefix") format("embedded-opentype"),
+       font-url("SukhumvitSet-SemiBold.woff2") format("woff2"),
+       font-url("SukhumvitSet-SemiBold.woff") format("woff"),
+       font-url("SukhumvitSet-SemiBold.ttf") format("truetype"),
+       font-url("SukhumvitSet-SemiBold.svg#SukhumvitSet-SemiBold") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SukhumvitSet";
+  src: font-url("SukhumvitSet-Text.eot");
+  src: font-url("SukhumvitSet-Text.eot?#iefix") format("embedded-opentype"),
+       font-url("SukhumvitSet-Text.woff2") format("woff2"),
+       font-url("SukhumvitSet-Text.woff") format("woff"),
+       font-url("SukhumvitSet-Text.ttf") format("truetype"),
+       font-url("SukhumvitSet-Text.svg#SukhumvitSet-Text") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SukhumvitSet";
+  src: font-url("SukhumvitSet-Thin.eot");
+  src: font-url("SukhumvitSet-Thin.eot?#iefix") format("embedded-opentype"),
+       font-url("SukhumvitSet-Thin.woff2") format("woff2"),
+       font-url("SukhumvitSet-Thin.woff") format("woff"),
+       font-url("SukhumvitSet-Thin.ttf") format("truetype"),
+       font-url("SukhumvitSet-Thin.svg#SukhumvitSet-Thin") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Optima";
+  src: font-url("Optima-Bold.eot");
+  src: font-url("Optima-Bold.eot?#iefix") format("embedded-opentype"),
+       font-url("Optima-Bold.woff2") format("woff2"),
+       font-url("Optima-Bold.woff") format("woff"),
+       font-url("Optima-Bold.ttf") format("truetype"),
+       font-url("Optima-Bold.svg#Optima-Bold") format("svg");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Optima";
+  src: font-url("Optima-BoldItalic.eot");
+  src: font-url("Optima-BoldItalic.eot?#iefix") format("embedded-opentype"),
+       font-url("Optima-BoldItalic.woff2") format("woff2"),
+       font-url("Optima-BoldItalic.woff") format("woff"),
+       font-url("Optima-BoldItalic.ttf") format("truetype"),
+       font-url("Optima-BoldItalic.svg#Optima-BoldItalic") format("svg");
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Optima";
+  src: font-url("Optima-ExtraBlack.eot");
+  src: font-url("Optima-ExtraBlack.eot?#iefix") format("embedded-opentype"),
+       font-url("Optima-ExtraBlack.woff2") format("woff2"),
+       font-url("Optima-ExtraBlack.woff") format("woff"),
+       font-url("Optima-ExtraBlack.ttf") format("truetype"),
+       font-url("Optima-ExtraBlack.svg#Optima-ExtraBlack") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Optima";
+  src: font-url("Optima-Italic.eot");
+  src: font-url("Optima-Italic.eot?#iefix") format("embedded-opentype"),
+       font-url("Optima-Italic.woff2") format("woff2"),
+       font-url("Optima-Italic.woff") format("woff"),
+       font-url("Optima-Italic.ttf") format("truetype"),
+       font-url("Optima-Italic.svg#Optima-Italic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Optima";
+  src: font-url("Optima-Regular.eot");
+  src: font-url("Optima-Regular.eot?#iefix") format("embedded-opentype"),
+       font-url("Optima-Regular.woff2") format("woff2"),
+       font-url("Optima-Regular.woff") format("woff"),
+       font-url("Optima-Regular.ttf") format("truetype"),
+       font-url("Optima-Regular.svg#Optima-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+//Helper class
+
+.nopad {
+  padding: 0;
+}
+
+.nomarg {
+  margin: 0;
+}
+
+.nobord {
+  border: 0 none !important;
+}
+
+
+
+html {
+	font-size: 10px;
+}
+
+::selection {
+  color: $lfcolor;
+  background: $bgcolor;
+}
+
+body {
+	font-size: 1.6em;
+  font-family: $sfont;
+  font-weight: 400;
+  color: $fcolor;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: $fcolor;
+	font-family: $pfont;
+	font-weight: normal;
+	small {
+    color: $lfcolor;
+    font-family: $sfont;
+		font-weight: 100;
+		font-size: 1em;
+	}
+}
+
+a.small {
+  font-weight: 300;
+}
+
+span.sep{
+  margin: 1em auto;
+  display: block;
+  height: $bdsize;
+  background: $bdcolor;
+  width: 10em;
+  max-width: 100%;
+  &.nomarg {
+    margin: 0em auto;
+  }
+  &.sep-block {
+    width: auto;
+  }
+  &.sep-primary {
+    background: $lfcolor;
+  }
+}
+
+.page-header {
+  margin: 20px 0;
+  border-bottom: 0;
+}
+
+.semi-bold {
+	font-weight: 600;
+}
+.light {
+	font-weight: 300;
+}
+.thin {
+	font-weight: 100;
+}
+
+p {
+	font-family: $sfont;
+  font-size: 1em;
+}
+a {
+  outline: none;
+	color: $fcolor;
+  font-weight: bolder;
+  &:focus {
+    color: $fcolor;
+    text-decoration: none;
+  }
+	&:hover {
+    text-decoration: underline;
+    outline: none;
+		color: $lfcolor;
+	}
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+  font-size: 0px !important;
+  li {
+    font-size: 1.6rem;
+  }
+}
+
+.cl-brand {
+  font-family: $pfont;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.form-control::-webkit-input-placeholder {
+  padding-top: 1px;
+  color: $lfcolor;
+  line-height: inherit;
+}
+
+.form-control:-moz-placeholder { /* Firefox 18- */
+  color: $lfcolor;  
+
+}
+
+.form-control::-moz-placeholder {  /* Firefox 19+ */
+  color: $lfcolor;  
+}
+
+.form-control:-ms-input-placeholder {  
+  padding-top: 1px;
+  color: $lfcolor;  
+  line-height: inherit;
+}
+
+.glyphicon {
+  font-family: "Glyphicons Halflings";
+}
+
+.vertical-center {
+  @include vertical-align();
+}
+
+input[type="date"], input[type="time"], input[type="datetime-local"], input[type="month"] {
+  line-height: inherit;
+}

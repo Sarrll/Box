@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chanintr Box</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <%= stylesheet_link_tag    'vendor', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id="content" class="animated fadeIn">
+    <header class="header">
+      <%= render 'layouts/header' %>
+    </header>
+    <section class="content">
+      <div id="main-container" class="container-fluid main-container">
+        <div class="row">
+          <div id="sidebar" class="col-sm-3 col-md-2">
+            <%= render 'layouts/sidebar' %>
+          </div>
+          <div id="main-content" class="col-sm-9 col-md-10">
+            <!--  main content -->
+            <%= render 'layouts/flash' %>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <%= render 'layouts/footer' %>
+    </footer>
+    </div>
+  </body>
+</html>

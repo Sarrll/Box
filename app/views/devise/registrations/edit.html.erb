@@ -1,0 +1,181 @@
+<div class="text-center inner-content">
+  <div class="">
+    <hgroup class="page-header">
+      <h3>Edit account</h3>
+    </hgroup>
+
+    <div class="panel-group" id="edit-account-menu" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-outline">
+        <div class="panel-heading" role="tab" id="basic-details-heading">
+          
+            <a data-toggle="collapse" data-parent="#edit-account-menu" href="#basic-details" aria-expanded="true" aria-controls="basic-details">
+              Basic details
+            </a>
+          
+        </div>
+        <div id="basic-details" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="basic-details-heading">
+          <div class="panel-body">
+            <%= form_for(
+              resource, 
+                as: resource_name, 
+                url: registration_path(resource_name), 
+                html: { 
+                  :multipart => true,
+                  :'id' => 'edit-basic-details',
+                  :'data-type' => 'json',
+                  method: :put ,
+                  :'class' => 'form-horizontal new_user'
+                },
+                remote: true
+            ) do |f| %>
+          
+              <div class="form-group">
+                <div class="fileinput fileinput-new" data-provides="fileinput">
+                  <div class="fileinput-new thumbnail">
+                    <%= image_tag(current_user.profile_image.url(:medium), :class => "img-circle") %>
+                  </div>
+                  <div class="fileinput-preview fileinput-exists thumbnail">
+                  </div>
+                  <div>
+                    <span class="btn btn-default btn-file">
+                      <span class="fileinput-new">Change profile image</span>
+                      <span class="fileinput-exists">Change profile image</span>
+                      <%= f.label :profile_image, :class => "sr-only"  %>
+                      <%= f.file_field :profile_image %>
+                    </span>
+                    <a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Clear</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :first_name, 'First name', :class => "col-sm-3 control-label" %>
+                <div class="col-sm-9">
+                  <%= f.text_field :first_name, autofocus: true, :class => "form-control"  %>
+                </div>      
+              </div>
+              
+              <div class="form-group">
+                <%= f.label :last_name, "Last name", :class => "col-sm-3 control-label" %>
+                <div class="col-sm-9">
+                  <%= f.text_field :last_name, :class => "form-control"%>
+                </div>      
+              </div>
+
+              <div class="form-group">
+                <%= f.label :email, "Email address", :class => "col-sm-3 control-label" %>
+                <div class="col-sm-9">
+                  <%= f.email_field :email, :class => "form-control" , placeholder: "e.g. info@chanintr.com" %>
+                </div>     
+              </div>
+
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+              <% end %>
+              <span class="sep-block sep"></span>
+              <div class="form-group">
+                <%= f.label :current_password, "Current password", :class => "col-sm-3 control-label" %>
+                <div class="col-sm-9">
+                  <%= f.password_field :current_password, autocomplete: "off", :class => "form-control" %>
+                </div>
+              </div>
+
+              <div class="actions form-group text-left">
+                <div class="col-sm-offset-3 col-sm-2">
+                  <%= button_tag(type: 'submit', :class=> "btn btn-primary btn-block btn-lg", :disabled => true ) do %>
+                    Update
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-outline">
+        <div class="panel-heading" role="tab" id="change-password-heading">
+          
+            <a class="collapsed" data-toggle="collapse" data-parent="#edit-account-menu" href="#change-password" aria-expanded="false" aria-controls="change-password">
+              Change password
+            </a>
+          
+        </div>
+        <div id="change-password" class="panel-collapse collapse" role="tabpanel" aria-labelledby="change-password-heading">
+          <div class="panel-body">
+            <%= form_for(
+              resource, 
+                as: resource_name, 
+                url: registration_path(resource_name), 
+                html: { 
+                  :'id' => 'edit-password',
+                  :'data-type' => 'json',
+                  method: :put ,
+                  :'class' => 'form-horizontal new_user'
+                },
+                remote: true
+            ) do |f| %>
+              <div class="form-group">
+                <%= f.label :password, :class => "col-sm-3 control-label" %>
+                <div class="col-sm-9">
+                  <%= f.password_field :password, autocomplete: "off", :class => "form-control" , placeholder: "Password (#{@minimum_password_length} characters minimum)" %>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :password_confirmation, "Password confirmation", :class => "col-sm-3 control-label" %>
+                <div class="col-sm-9">
+                  <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" , placeholder: "Password confirmation" %>
+                </div>
+              </div>
+
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+              <% end %>
+
+              <span class="sep-block sep"></span>
+              <div class="form-group">
+                <%= f.label :current_password, "Current password", :class => "col-sm-3 control-label" %>
+                <div class="col-sm-9">
+                  <%= f.password_field :current_password, autocomplete: "off", :class => "form-control" %>
+                </div>
+              </div>
+
+              <div class="actions form-group text-left">
+                <div class="col-sm-offset-3 col-sm-2">
+                  <%= button_tag(type: 'submit', :class=> "btn btn-primary btn-block btn-lg", :disabled => true ) do %>
+                    Update
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-outline">
+        <div class="panel-heading" role="tab" id="cancel-my-account-heading">
+          
+            <a class="collapsed" data-toggle="collapse" data-parent="#edit-account-menu" href="#cancel-my-account" aria-expanded="false" aria-controls="cancel-my-account">
+              Cancel my account
+            </a>
+          
+        </div>
+        <div id="cancel-my-account" class="panel-collapse collapse" role="tabpanel" aria-labelledby="cancel-my-account-heading">
+          <div class="panel-body">
+              <%= button_to "Cancel my account", registration_path(resource_name), :class=> "btn btn-danger btn-lg", data: { confirm: "Are you sure?" }, method: :delete %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('.fileinput').fileinput();
+    $('.fileinput').on("change.bs.fileinput",function(){
+      $(this).find(".fileinput-preview").find("img").centerImage();
+    });
+    form_submission("#edit-password");
+    form_submission("#edit-basic-details");
+  });
+</script>
+  

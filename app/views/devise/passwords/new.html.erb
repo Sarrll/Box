@@ -1,0 +1,43 @@
+<div class="text-center inner-content">
+
+   	<hgroup class="page-header text-center">
+      <h3>Forgot your password?</h3>
+    </hgroup>
+    <span class="sep sep-block"></span>
+
+	<%= form_for(
+		resource, 
+			as: resource_name, 
+			url: password_path(resource_name), 
+			html: { 
+				method: :post ,
+				:'data-type' => 'json',
+				:'class' => 'form-horizontal new_user'
+			},
+      		remote: true
+	) do |f| %>
+		<div class="form-group">
+	        <%= f.label :email, :class => "col-sm-3 control-label" %>
+	        <div class="col-sm-9">
+	          <%= f.email_field :email, autofocus: true , :class => "form-control" , placeholder: "Email address" %>
+	        </div>
+	    </div>
+	  	<div class="actions form-group text-left">
+	        <div class="col-sm-offset-3 col-sm-5 col-md-5">
+	          <%= button_tag(type: 'submit', :class=> "btn btn-primary btn-block btn-lg" ) do %>
+	            Send me reset password instructions
+	          <% end %>
+	        </div>
+      	</div>
+	<% end %>
+	<span class="sep sep-block"></span>
+    <div class="">
+      <%= render "devise/shared/links" %>
+    </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    form_submission("#new_user");
+  });
+</script>

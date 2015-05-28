@@ -1,0 +1,44 @@
+<hgroup class="page-header">
+	<h3><small>Administrator / </small>User Management</h3>
+	
+</hgroup>
+<span class="sep sep-block"></span>
+<a href="" class="btn btn-primary">New Account</a>
+<span class="sep sep-block"></span>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		Users
+	</div>
+	<div class="panel-body">
+		<table class="table table-hover table-resources-managemant">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th></th>
+					<th>Name</th>
+					<th>Roles</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @users.each do |user| %>
+				<tr>
+					<th scope="row"><%= user.id%></th>
+					<td><%= image_tag(user.profile_image.url(:thumb), :class => "img-circle") %></td>
+					<td><%= user.full_name%></td>
+					<td>
+						<% user.roles.each do |role| %>
+							<span><%= role.name.capitalize! %></span>
+						<% end %>
+					</td>
+					<td class="actions">
+						<%= link_to(administrator_edit_user_path(user.id) , :class=> "btn btn-sm btn-default") do  %>
+							<i class="fi-wrench medium"></i> Edit
+						<% end %>
+					</td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

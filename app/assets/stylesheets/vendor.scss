@@ -1,0 +1,36 @@
+@import "partials/variables";
+@import "flat-ui/variables";
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import "jasny-bootstrap.min.css";
+@import "animate.css";
+
+
+$icon-font-path2: if($bootstrap-sass-asset-helper, "bootstrap/", "../fonts/bootstrap/") !default;
+
+//** File name for all font files.
+$icon-font-name2:          "glyphicons-halflings-regular" !default;
+//** Element ID within SVG icon file.
+$icon-font-svg-id2:        "glyphicons_halflingsregular" !default;
+
+// Import the fonts
+@font-face {
+  font-family: "Glyphicons Halflings";
+  src: url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icon-font-path2}#{$icon-font-name2}.eot'), '#{$icon-font-path2}#{$icon-font-name2}.eot'));
+  src: url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icon-font-path2}#{$icon-font-name2}.eot?#iefix'), '#{$icon-font-path2}#{$icon-font-name2}.eot?#iefix')) format('embedded-opentype'),
+       url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icon-font-path2}#{$icon-font-name2}.woff2'), '#{$icon-font-path2}#{$icon-font-name2}.woff2')) format('woff2'),
+       url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icon-font-path2}#{$icon-font-name2}.woff'), '#{$icon-font-path2}#{$icon-font-name2}.woff')) format('woff'),
+       url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icon-font-path2}#{$icon-font-name2}.ttf'), '#{$icon-font-path2}#{$icon-font-name2}.ttf')) format('truetype'),
+       url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icon-font-path2}#{$icon-font-name2}.svg##{$icon-font-svg-id2}'), '#{$icon-font-path2}#{$icon-font-name2}.svg##{$icon-font-svg-id2}')) format('svg');
+}
+
+@import "bootstrap-select";
+@import "bootstrap3-switch";
+
+@import "jquery.ui.base";
+@import "jquery.ui.datepicker";
+@import "flat-ui";
+
+@import "foundation-icons";

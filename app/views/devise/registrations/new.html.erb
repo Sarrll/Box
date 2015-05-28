@@ -1,0 +1,126 @@
+<div class="text-center inner-content">
+  <div class="">
+    <hgroup class="page-header">
+      <h3>Register</h3>
+    </hgroup>
+    <span class="sep-block sep"></span>
+    <%= form_for(
+      resource, 
+        as: resource_name, 
+        url: registration_path(resource_name),
+        :html => {
+          :multipart => true,
+          :'data-type' => :json,
+          :'class' => 'form-horizontal new_user',
+        },
+        remote: true
+    ) do |f| %>
+      <div class="form-group">
+        <div class="fileinput fileinput-new" data-provides="fileinput">
+          <div class="fileinput-new thumbnail">
+            <%= image_tag(resource.profile_image.url(:medium), :class => "img-circle") %>
+          </div>
+          <div class="fileinput-preview fileinput-exists thumbnail"></div>
+          <div>
+            <span class="btn btn-default btn-file">
+              <span class="fileinput-new">Change profile image</span>
+              <span class="fileinput-exists">Change profile image</span>
+              <%= f.label :profile_image, :class => "sr-only"  %>
+              <%= f.file_field :profile_image %>
+            </span>
+            <a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Clear</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :first_name, 'First name', :class => "col-sm-3 control-label" %>
+        <div class="col-sm-9">
+          <%= f.text_field :first_name, autofocus: true, :class => "form-control"  %>
+        </div>      
+      </div>
+    	
+      <div class="form-group">
+        <%= f.label :last_name, "Last name", :class => "col-sm-3 control-label" %>
+        <div class="col-sm-9">
+          <%= f.text_field :last_name, :class => "form-control"%>
+        </div>      
+      </div>
+
+      <div class="form-group">
+        <%= f.label :email, "Email address", :class => "col-sm-3 control-label" %>
+        <div class="col-sm-9">
+          <%= f.email_field :email, :class => "form-control" , placeholder: "e.g. info@chanintr.com" %>
+          
+        </div>     
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password, :class => "col-sm-3 control-label" %>
+        <div class="col-sm-9">
+          <%= f.password_field :password, autocomplete: "off", :class => "form-control" , placeholder: "Password (#{@minimum_password_length} characters minimum)" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation, "Password confirmation", :class => "col-sm-3 control-label" %>
+        <div class="col-sm-9">
+          <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" , placeholder: "Password confirmation" %>
+        </div>
+      </div>
+    	
+      <div class="form-group text-left">
+        <div class="col-sm-offset-3 col-sm-9">
+          <%= f.label :terms_and_conditions, "Terms and Conditions", :class => "checkbox" do %>
+            <%= f.check_box :terms_and_conditions , checked: false  , :data => { :toggle => "checkbox" } %>
+            I agree to <a id="terms" data-toggle="modal" data-target="#termsModal">terms and conditions</a>.
+          <% end -%>
+          <!-- Modal -->
+          <div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="termsModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="termsModalLabel">Terms and Conditions</h4>
+                </div>
+                <div class="modal-body">
+                  <%= render "pages/terms/terms" %>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="accept btn btn-primary" data-dismiss="modal">Accept</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="actions form-group text-left">
+      <!-- :disabled => true  -->
+        <div class="col-sm-offset-3 col-sm-2">
+          <%= button_tag(type: 'submit', :class=> "btn btn-primary btn-block btn-lg" ) do %>
+            Register
+          <% end %>
+        </div>
+      </div>
+
+    <% end %>
+    <span class="sep sep-block"></span>
+    <div class="">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('.fileinput').fileinput();
+    $('.fileinput').on("change.bs.fileinput",function(){
+      $(this).find(".fileinput-preview").find("img").centerImage();
+    });
+    form_submission("#new_user");
+    $("#termsModal").on("click", ".accept", function(){
+      $('#user_terms_and_conditions').check();
+    });
+  });
+</script>

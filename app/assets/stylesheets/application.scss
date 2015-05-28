@@ -1,0 +1,78 @@
+@import "partials/variables";
+
+@import "partials/mixins";
+@import "partials/typography";
+@import "partials/elements";
+
+@import "layouts/header";
+@import "layouts/footer";
+@import "layouts/sidebar";
+
+
+
+.main-container {
+	padding: 15px;
+	// .page-header { 
+	// 	padding-left: 30px;
+ 	//  padding-right: 30px;
+ 	//  text-align: center;
+	// }
+	.table-resources-managemant {
+		tr , td , th {
+			vertical-align: middle;
+		}
+		td.actions > a {
+			opacity: 0;
+		}
+		tr:hover {
+			td.actions > a {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+
+
+#error_explanation {
+	display: inline-block;
+	h2 {
+		display: none;
+	}
+	ul {
+		margin-bottom: 0;
+		display: inline-block;
+		li {
+			display: inline-block;
+		}
+	}
+}
+
+#edit-account-menu {
+	.panel-heading {
+		a {
+			font-weight: normal;
+		}
+	}
+}
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width: $screen-sm-min) { 
+	// .main-container {
+	// 	.page-header { 
+	//   		text-align: left;
+	// 	}
+	// }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media screen and (min-width: $screen-md-min) { 
+	
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media screen and (min-width: $screen-lg-min) { 
+}

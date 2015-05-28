@@ -1,0 +1,578 @@
+/* Flatten das boostrap */
+.well, .navbar-inner, .popover, .btn, .tooltip, input, select, textarea, pre, .progress, .modal, .add-on, .alert, .table-bordered, .nav>.active>a, .dropdown-menu, .tooltip-inner, .badge, .label, .img-polaroid {
+ 	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	border-collapse: collapse !important;
+	background-image: none !important;
+	&:focus {
+		outline: none;
+	}
+}
+
+.nav {
+
+}
+
+.inner-content {
+	max-width:1000px;
+	margin: 0 auto;
+}
+
+//Animate
+
+//Alert & Notifications
+.alert {
+	border-width: $bdsize;
+	border-radius: $brad;
+	margin-bottom: 1em;
+	&.alert-primary {
+		border-color: $lfcolor;
+		background-color: $fcolor;
+		color: $bgcolor;
+		a {
+			color: $bgcolor; 
+		}
+	}
+}
+
+//Panels
+.panel {
+	color: $fcolor;
+	border: $bdsize solid $bdcolor;
+	border-radius: $brad;
+	.panel-heading {
+		font-family: $pfont;
+		color: $fcolor;
+		border-radius: 0;
+		font-weight: normal;
+	}
+	.panel-body {
+		color: $fcolor;
+		border-radius: 0;
+		padding: 3rem 1.5rem;
+	}
+	
+}
+
+.card {
+	border: $bdsize solid $bdcolor;
+	width: 100%;
+	border-radius: 4px;
+	display: block;
+	position: relative;
+	overflow: hidden;
+	.card-content {
+		padding: 0;
+		background: #ddd;
+		border-bottom: $bdsize solid $bdcolor;
+	}
+	.card-description {
+		padding: 1em;
+		background: #eee;
+	}
+}
+
+.box {
+	border-radius: $brad;
+	padding: 1.5rem;
+	width: auto;
+	border: $bdsize solid $bdcolor;
+	display:inline-block;
+}
+
+.block {
+	border-radius: 4px;
+	padding: 1.5rem;
+	width: 100%;
+	border: $bdsize solid $bdcolor;
+	display: block;
+	margin-bottom: 1.5rem;
+}
+
+//Button 
+button.close {
+	@include transition(all 0.5s ease);
+}
+.btn {
+	&:focus, &.focus, &:active:focus, &:active.focus, &.active:focus, &.active.focus {
+		outline: none;
+	}
+	@include box-sizing();
+	@include transition(all 0.5s ease);
+	&.btn-warning {
+		border: $bdsize solid $brand-warning;
+	}
+	&.btn-danger {
+		border: $bdsize solid $brand-danger;
+	}
+	&.btn-light {
+		color: $fcolor;
+		background: $bgcolor;
+		border: $bdsize solid $bdcolor;
+		&:hover, &.btn-light.active {
+			background: darken($bgcolor, 15%);
+			color: darken($fcolor, 15%);
+			border-color: darken($bdcolor, 15%);
+		}
+	}
+	&.btn-lg {
+		border-radius: $brad;
+	}
+	&.btn-primary {
+		border: $bdsize solid $fcolor;
+		color: $bgcolor;
+	}
+	&.btn-outline {
+		color: $bgcolor;
+		background: none;
+		border: $bdsize solid $bgcolor;
+		&:hover {
+			border: $bdsize solid $bdcolor;
+			background: $bgcolor;
+			color: $fcolor;
+		}
+	}
+	&.btn-default {
+		color: $fcolor;
+		background: none;
+		border: $bdsize solid $fcolor;
+		&:hover, &.btn-default.active {
+			background: $fcolor;
+			color: $bgcolor;
+		}
+	}
+	&.btn-link {
+		color: $fcolor;
+	}
+}
+
+//form 
+.form-control {
+	border-width: $bdsize;
+	height: 43px;
+	border-radius: $brad;
+}
+.form-control-static {
+	line-height: 43px;
+	min-height: 43px;
+	padding: 0px;
+}
+.form-horizontal .control-label {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 0px;
+	line-height: 43px;
+}
+.form-horizontal .form-control-static {
+	padding-top: 0px;
+}
+
+.has-feedback label ~ .form-control-feedback {
+	top: 41px;
+}
+.form-control-feedback {
+	height: 43px;
+	width: 43px;
+}
+
+.form-control-feedback-msg {
+	font-size: 0.7em;
+	line-height: 1em;
+	color: $brand-danger;
+}
+
+.form-control + .input-icon {
+	background-color: rgba(255,255,255,0);
+	@include transition(color 0.25s ease);
+}
+
+.form-horizontal .radio, .form-horizontal .checkbox, .form-horizontal .radio-inline, .form-horizontal .checkbox-inline {
+	padding-top: 0;
+}
+// Datepicker 
+
+.ui-datepicker {
+	background: none;
+	padding: 1em 0;
+	.ui-datepicker-today {
+		a {
+			background: $hlcolor;
+			color: $fcolor;
+		}
+	}
+	.ui-datepicker-current-day {
+		a {
+			background: $fcolor;
+			color: $bgcolor;
+		}
+	}
+	.ui-state-hover {
+		@include box-shadow(0, 0 0, 1px, $fcolor, inset);
+	}
+	.ui-datepicker-header {
+		border-bottom-width: 0px;
+		border-radius: $brad $brad  0 0;
+		background: $bgcolor;
+		overflow: hidden;
+	}
+	.ui-datepicker-calendar {
+		border-top-width: 0px;
+		border-radius: 0 0 $brad $brad;
+		background: $bgcolor;
+		overflow: hidden;
+	}
+	.ui-datepicker-next {
+		overflow: hidden;
+		&:hover {
+			right: 2px;
+			top: 2px;
+		}
+		.ui-icon-circle-triangle-e {
+			display: inline-block;
+  			font-family: "Flat-UI-Icons";
+  			speak: none;
+  			font-style: normal;
+  			font-weight: normal;
+  			font-variant: normal;
+  			text-transform: none;
+  			-webkit-font-smoothing: antialiased;
+  			-moz-osx-font-smoothing: grayscale;
+  			text-indent: 0;
+  			right: 0;
+  			left: auto;
+			margin-left: 0;
+			top: 0;
+			margin-top: 0; 
+			width: auto;
+			height: 29px;
+			&:after {
+				content: "\e02c";
+				margin-right: 5px;
+				margin-left: 30px;
+			}
+		}
+	}
+	.ui-datepicker-prev {
+		overflow: hidden;
+		&:hover {
+			left: 2px;
+			top: 2px;
+		}
+		.ui-icon-circle-triangle-w {
+			display: inline-block;
+  			font-family: "Flat-UI-Icons";
+  			speak: none;
+  			font-style: normal;
+  			font-weight: normal;
+  			font-variant: normal;
+  			text-transform: none;
+  			-webkit-font-smoothing: antialiased;
+  			-moz-osx-font-smoothing: grayscale;
+  			text-indent: 0;
+  			left: 0;
+			margin-left: 0;
+			top: 0;
+			margin-top: 0;
+			width: auto;
+			height: 29px;
+			&:before {
+				content: "\e02d";
+				margin-left: 5px;
+				margin-right: 30px;
+			}
+		}
+	}
+	
+}
+
+//Select & Dropdown
+
+.dropdown-menu {
+	display: none;
+	box-shadow: none;
+	border-color: $bdcolor;
+}
+
+.bootstrap-select .btn:focus {
+	outline: none !important;
+}
+
+.dropdown, .bootstrap-select {
+	display: inline-block;
+	.dropdown-toggle.btn-default {
+		border-color: $bdcolor;
+		background: none;
+		&:hover {
+			color: $fcolor;
+			border-color: $fcolor;
+			background: none;
+		}
+		.caret {
+			border-top-color: $fcolor;
+			border-bottom-color: $fcolor;
+		}
+	}
+	&.open {
+		.dropdown-toggle.btn-default {
+			background: $bgcolor;
+			color: $fcolor;
+		}
+	}
+	.dropdown-toggle.btn-link {
+		.caret {
+			border-top-color: $fcolor;
+			border-bottom-color: $fcolor;
+		}
+	}
+}
+
+
+
+//Navbar
+
+.navbar-default .navbar-form .input-group.focus .form-control , .navbar-default .navbar-form .input-group .form-control {
+	border-right-width: 0px;
+}
+.input-group-btn .btn {
+	border-width: $bdsize;
+}
+
+//Typehead 
+
+.form-control, .twitter-typeahead .tt-query {
+	border-radius: $brad;
+	border-width: $bdsize;
+}
+.twitter-typeahead .tt-dropdown-menu {
+	padding: 0;
+	overflow: hidden;
+	border-radius: $brad;
+	border-width: $bdsize;
+}
+
+//Checkbox & Radio 
+.checkbox, .radio {
+	@include transition(color 0.25s ease);
+	padding-left: 25px;
+	padding-right: 10px;
+	.icons span {
+		@include transition(all 0.25s ease);
+	}
+}
+
+.has-success {
+	.radio, .checkbox, .radio-inline, .checkbox-inline {
+	    color: $brand-success;
+	    a {
+	    	color: $brand-success;
+	    }
+	    .fui-checkbox-unchecked {
+				color: $brand-success;
+		}
+		&.checked {
+			color: $brand-success;
+			.fui-checkbox-checked {
+				color: $brand-success;
+			}
+		}
+	}
+}
+
+.has-warning {
+	.radio, .checkbox, .radio-inline, .checkbox-inline {
+		color: $brand-warning;
+		a {
+	    	color: $brand-warning;
+	    }
+	    .fui-checkbox-unchecked {
+				color: $brand-warning;
+		}
+		&.checked {
+			color: $brand-warning;
+			.fui-checkbox-checked {
+				color: $brand-warning;
+			}
+		}
+	}
+}
+
+.has-error {
+	.radio, .checkbox, .radio-inline, .checkbox-inline {
+		color: $brand-danger;
+		a {
+	    	color: $brand-danger;
+	    }
+	    .fui-checkbox-unchecked {
+				color: $brand-danger;
+		}
+		&.checked {
+			color: $brand-danger;
+			.fui-checkbox-checked {
+				color: $brand-danger;
+			}
+		}
+	}
+}
+
+//Tags Input 
+
+.tagsinput {
+	border-width: $bdsize;
+	border-radius: $brad;
+	.tagsinput-add {
+		color: $fcolor;
+		border-radius: $brad;
+		&:hover {
+			color: $bdcolor;
+			background: $fcolor;
+		}
+	}
+	.tag {
+		border-radius: $brad;
+		padding-top: 7px;
+		color: $bdcolor;
+		&:hover {
+			color: $bdcolor;
+			.tagsinput-remove-link {
+				text-decoration: none;
+				&::before {
+					color: $bdcolor;
+				}
+			}
+		}
+	}
+
+	input {
+		height: 30px;
+		margin-top:0px;
+		border-radius: $brad;
+		width: auto !important;
+	}
+}
+
+//Slider Bar 
+
+.ui-slider {
+	overflow: visible;
+}
+
+//fileinput
+
+.fileinput {
+	margin-bottom: 0;
+	.thumbnail {
+		margin-bottom: 1em;
+		width: 200px; 
+		height: 200px; 
+		border-radius:200px; 
+		padding:0;
+		border: $bdsize solid $bdcolor;
+		background: $bdcolor;
+	}
+}
+
+// modal 
+.modal {
+	background-color: rgba(0,0,0,0.5);
+	.modal-dialog {
+		z-index: 9999;
+	}
+}
+
+.modal-backdrop {
+	display: none;
+}
+
+
+//loader
+
+@include keyframes(breathe) {
+  0% {
+    letter-spacing:0;
+    text-shadow:0 0 1px $fcolor;
+  }
+  30% {
+    color:transparent;
+  }
+  50% {
+    letter-spacing:25px;
+    font-size:1em;
+    text-shadow:0 0 6px $fcolor;
+  }
+  60% {
+    color:transparent;
+  }
+  100% {
+    letter-spacing:0;
+    text-shadow:0 0 1px $fcolor;
+  }
+}
+
+span.loader {
+  	height: 100%;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    display: block;
+    @include transform-style(preserve-3d);
+  	&:before {
+  		display: block;
+  		@include vertical-align();
+  		content : "loading";
+  		color: $fcolor;
+  		font-size:1em;
+		font-family: $sfont, sans-serif;
+		@include animation(breathe 7s ease infinite);
+  	}
+}
+
+@include keyframes(formLoader) {
+    to {
+      opacity: 0;
+      @include transform( scale(2) );
+    }
+}
+
+
+.formLoader {
+	display: inline-block;
+	vertical-align: middle;
+	&::after {
+		content: "";
+	  	background-color: #fff;
+	  	border-radius: 100%;
+	  	margin-top: -2px;
+	  	margin-right: 10px;
+	  	-webkit-animation-fill-mode: both;
+	         	animation-fill-mode: both;
+	  	border: 2px solid #fff;
+	  	border-bottom-color: transparent;
+	  	height: 20px;
+	  	width: 20px;
+	  	background: transparent !important;
+	  	display: block;
+	 	@include animation(rotate 0.75s 0s linear infinite);
+    }
+}
+
+@include keyframes(rotate) {
+ 	0% {
+    	@include transform(rotate(0deg));
+    }
+
+  	50% {
+    	@include transform(rotate(180deg));
+    }
+
+  	100% {
+    	@include transform(rotate(360deg));
+    } 
+}
+
+
+
+

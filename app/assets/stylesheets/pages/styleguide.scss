@@ -1,0 +1,54 @@
+@import "partials/variables";
+
+#styleguide-menu {
+	ul {
+		font-family: $pfont;
+		padding-bottom: 15px;
+		margin-bottom: 15px;
+		border-bottom: $bdsize solid $pcolor;
+		li a {
+			font-weight: normal;
+		}
+		li.active a {
+			text-decoration: underline;
+		}
+		li a:hover, li a:focus, li a:active  {
+			background: none;
+			color: $lfcolor;
+			text-decoration: underline;
+			outline: none;
+		}
+	}
+}
+
+.card {
+	.card-content {
+		&.primary-color {
+			background: $pcolor;
+		}
+		&.light-primary-color {
+			background: $lpcolor;
+		}
+		&.middle-color {
+			background: $mdcolor;
+		}
+		&.secondary-color {
+			background: $scolor;
+		}
+		&.light-secondary-color {
+			background: $dscolor;
+		}
+	}
+}
+	
+.sg-color-palette {
+	height: 150px;
+}
+
+.font-primary {
+	font-family: $pfont;
+}
+
+.font-secondary {
+	font-family: $sfont;
+}

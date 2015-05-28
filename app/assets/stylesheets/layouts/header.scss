@@ -1,0 +1,176 @@
+.header {
+	.inner-header {
+		border-bottom: $pcolor $bdsize solid;
+		text-align: center;
+		.brand-block {
+			border-bottom: $pcolor $bdsize solid;
+		}
+		.brand {
+			padding: 0;
+			font-size: 1.4em;
+			line-height: 120px;
+			height: 120px;
+			display: inline-block;
+			&:hover, &:focus {
+				text-decoration: none;
+			}
+		}
+		.navbar-right {
+			margin: 0;
+			li {
+				display: inline-block;
+				float: none;
+			}
+		}
+		.menu-search {
+			margin: 0;
+			border: 0 none;
+			padding: 0;
+			.form-group {
+				@include transform-style(preserve-3d);
+				height: 60px;
+			}
+			.input-group {
+				@include vertical-align();
+				.input-group-btn {
+					button {
+						color: $lfcolor;
+						@include box-sizing(border-box);
+						border: 0px;
+						border-radius:0;
+					}
+				}
+				.form-control {
+					text-align: right;
+					padding-left: 0;
+					@include box-sizing(border-box);
+					border: 0px;
+					border-radius:0;
+				}		
+				&.focus {
+					.input-group-btn button {
+						color: $fcolor;
+					}
+				}		
+			}
+
+		}
+		.usermenu {
+			background: none;
+			text-align: center;
+			&.open {
+				a {
+					text-decoration: underline;
+					background: none;
+					&:hover, &:active, &:visited, &:focus {
+						background: none;
+						text-decoration: underline;
+					}
+				}
+			}
+			a {
+				&:hover, &:active, &:visited, &:focus {
+					background: none;
+					text-decoration: underline;
+				}
+			}
+			.usermenu-img {
+				display: inline-block;
+				padding-left: 0.3em;
+			}
+			.usermenu-dropdown {
+				width: 100%;
+				display: block;
+				.dropdown-toggle {
+					background: none;
+					line-height: 60px;
+					padding: 0 1em;
+					@include transition(color 0.25s ease);
+				}
+				.dropdown-menu {
+					border-radius: none;
+					background-color: none;
+					border-color: none;
+					margin-top: 1em;
+					li {
+						display: block;
+						text-align: center
+					}
+				}
+			}
+		}
+		.login-menu {
+			li {
+				background: none;
+				line-height: 60px;
+				a {
+					padding: 0 1em;
+					line-height: 60px;
+				}
+			}
+			a {
+				@include transition(color 0.25s ease);
+				&:hover, &:active, &:visited, &:focus {
+					background: none;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width: $screen-sm-min) { 
+	.header {
+		.inner-header {
+			.brand-block {
+				border-bottom: 0 none;
+			}
+			.login-menu {
+				li {
+					line-height: 120px;
+					a {
+						line-height: 120px;
+					}
+				}
+			}
+			.menu-search {
+				.form-group {
+					height: 120px;
+				}
+				.input-group { 
+					.form-control {
+						text-align: left;
+					}
+				}
+			}
+			.usermenu {
+				.usermenu-img {
+					line-height: 120px;
+					display: inline-block;
+				}
+				.usermenu-dropdown {
+					.dropdown-toggle {
+						line-height: 120px;
+					}
+					.dropdown-menu {
+						border-radius: $brad;
+						border: $bdcolor $bdsize solid;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media screen and (min-width: $screen-md-min) { 
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media screen and (min-width: $screen-lg-min) { 
+}

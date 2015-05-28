@@ -1,0 +1,19 @@
+.footer {
+	background: none;
+	.inner-footer {
+		border-top: $pcolor $bdsize solid;
+		text-align: center;
+		.navbar-footer {
+			margin-bottom: 0;
+		}
+		.navbar-text {
+			width: 100%;
+			margin: 1em 0;
+			font-size: 0.8em;
+			.navbar-link {
+				display: inline-block;
+				font-size: 1.2em;
+			}
+		}
+	}
+}
